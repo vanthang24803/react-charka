@@ -10,4 +10,7 @@ export default defineConfig({
       usePolling: true,
     },
   },
+  resolve: {
+    alias: [{ find: "@", replacement: "/src" }],
+  },
 });
