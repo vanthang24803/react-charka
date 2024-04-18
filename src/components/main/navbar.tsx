@@ -1,5 +1,7 @@
 import { Box, Center, Flex, Image } from "@chakra-ui/react";
-import { MenuBar } from "@/components/menu-bar";
+import { MenuBar } from "@/components/main/menu-bar";
+import Logo from "@/assets/images/logo.svg";
+import { Section } from "./section";
 
 export const Navbar = () => {
   return (
@@ -16,21 +18,13 @@ export const Navbar = () => {
       </Center>
       <Box as="nav" className="w-full border-b border-gray-300 py-2">
         <Box className="md:max-w-screen-2xl mx-auto">
-          <Flex
-            align="center"
-            justify="space-between"
-            className="p-4 lg:p-2"
-          >
-            <Image
-              src="https://cdn.sanity.io/images/y346iw48/production/1af82117dcf52d35da53ba107d273d4e32d36c05-182x36.svg?w=182&h=36&auto=format"
-              alt="logo"
-              w={[120, 160, 180]}
-              cursor="pointer"
-            />
+          <Flex align="center" justify="space-between" className="p-4 lg:p-2">
+            <Image src={Logo} alt="logo" w={[120, 160, 180]} cursor="pointer" />
             <MenuBar />
           </Flex>
         </Box>
       </Box>
+      <Section />
     </Box>
   );
 };

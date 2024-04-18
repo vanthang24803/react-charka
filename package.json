@@ -14,10 +14,12 @@
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
     "@fontsource-variable/domine": "^5.0.18",
+    "@types/react-helmet": "^6.1.11",
     "framer-motion": "^11.1.1",
     "lucide-react": "^0.368.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
     "react-router-dom": "^6.22.3"
   },
   "devDependencies": {
