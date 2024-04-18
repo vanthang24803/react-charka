@@ -23,17 +23,25 @@ export const Section = () => {
             justifyContent="center"
             gap={{
               md: "1rem",
-              lg: "1.25rem",
+              lg: "1.5rem",
             }}
           >
             {categories.map((item, index) => (
-              <Link
-                to={item.value}
-                key={index}
-                className="hover:text-[#00917b] font-semibold hover:italic"
-              >
-                {item.name}
-              </Link>
+              <div className="relative">
+                <Link
+                  to={item.value}
+                  key={index}
+                  className="hover:text-[#00917b] font-semibold hover:italic"
+                >
+                  {item.name}
+                </Link>
+                {index === 0 && (
+                  <span className="absolute -top-1 -right-2.5 flex h-2.5 w-2.5">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#009a7b] opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#009a7b]"></span>
+                  </span>
+                )}
+              </div>
             ))}
           </Flex>
         </Center>

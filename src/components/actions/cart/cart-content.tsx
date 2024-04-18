@@ -9,8 +9,6 @@ import {
   DrawerCloseButton,
 } from "@chakra-ui/react";
 
-type Size = "xs" | "sm" | "md" | "lg" | "xl" | "2xl";
-
 type Props = {
   isOpen: boolean;
   num: number;

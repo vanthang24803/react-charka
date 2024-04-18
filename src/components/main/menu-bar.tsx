@@ -1,7 +1,7 @@
 import { Stack } from "@chakra-ui/react";
 
-import { Search } from "@/components/actions/search";
-import { User } from "@/components/actions/user";
+import { Search } from "@/components/actions/search/search";
+import { AuthActions } from "@/components/actions/auth/auth-actions";
 import { Cart } from "@/components/actions/cart/cart";
 import { Location } from "@/components/actions/location";
 
@@ -14,7 +14,7 @@ export const MenuBar = () => {
     >
       <Location />
       <Search />
-      <User />
+      <AuthActions />
       <Cart />
     </Stack>
   );
