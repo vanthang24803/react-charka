@@ -27,10 +27,9 @@ export const Section = () => {
             }}
           >
             {categories.map((item, index) => (
-              <div className="relative">
+              <div className="relative" key={index}>
                 <Link
                   to={item.value}
-                  key={index}
                   className="hover:text-[#00917b] font-semibold hover:italic"
                 >
                   {item.name}

@@ -1,6 +1,6 @@
 import { Flex, Text, Hide, Show, Image, useDisclosure } from "@chakra-ui/react";
 import UserIcon from "@/assets/images/user.svg";
-import { LoginModal } from "./login-modal";
+import { AuthModal } from "./auth-modal";
 
 export const AuthActions = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -18,10 +18,11 @@ export const AuthActions = () => {
             </Text>
           </Flex>
         </Flex>
-        <LoginModal  isOpen={isOpen} onClose={onClose} size="md"/>
+        <AuthModal isOpen={isOpen} onClose={onClose} size="md" />
       </Hide>
       <Show below="md">
-        <Image src={UserIcon} alt="user" boxSize="20px" />
+        <Image src={UserIcon} alt="user" boxSize="20px" onClick={onOpen} />
+        <AuthModal isOpen={isOpen} onClose={onClose} size="sm" />
       </Show>
     </>
   );
