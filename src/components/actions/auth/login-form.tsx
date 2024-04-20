@@ -8,9 +8,17 @@ import {
   Input,
   Button,
 } from "@chakra-ui/react";
-import { toast } from "react-hot-toast";
+import { useState } from "react";
+import useAuth from "@/hooks/use-auth";
 
-export const LoginForm = () => {
+type Props = {
+  onClose: () => void;
+};
+
+export const LoginForm = ({ onClose }: Props) => {
+  const auth = useAuth();
+  const [loading, setLoading] = useState(false);
+
   const loginSchema = yup.object().shape({
     email: yup
       .string()
@@ -31,8 +39,11 @@ export const LoginForm = () => {
       }}
       validationSchema={loginSchema}
       onSubmit={(values) => {
-        console.log(values);
-        toast.success("Hello World")
+        setLoading(true);
+        const { email, password } = values;
+        auth.login(email, password);
+        setLoading(false);
+        onClose();
       }}
     >
       {({ handleSubmit, errors, touched }) => (
@@ -48,7 +59,7 @@ export const LoginForm = () => {
                 placeholder="mail@example.com"
                 height="50px"
                 rounded="none"
-                width="full"
+                isDisabled={loading}
               />
               <FormErrorMessage>{errors.email}</FormErrorMessage>
             </FormControl>
@@ -60,14 +71,15 @@ export const LoginForm = () => {
                 name="password"
                 type="password"
                 placeholder="Password"
-                width="full"
                 height="50px"
                 rounded="none"
+                isDisabled={loading}
               />
               <FormErrorMessage>{errors.password}</FormErrorMessage>
             </FormControl>
 
             <Button
+              isLoading={loading}
               type="submit"
               colorScheme="green"
               width="full"

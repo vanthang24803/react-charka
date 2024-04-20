@@ -52,7 +52,11 @@ export const AuthModal = ({ isOpen, onClose, size }: Props) => {
         </DrawerHeader>
 
         <DrawerBody>
-          {actions === "login" ? <LoginForm /> : <RegisterForm />}
+          {actions === "login" ? (
+            <LoginForm onClose={onClose} />
+          ) : (
+            <RegisterForm />
+          )}
 
           <Stack direction="column" gap={2} mt={4}>
             <Flex alignItems="center" gap={2}>

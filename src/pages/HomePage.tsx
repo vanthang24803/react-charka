@@ -1,7 +1,7 @@
 import { Billboard } from "@/components/billboard";
 import { Seo } from "@/components/seo";
-
 function HomePage() {
+
   return (
     <>
       <Seo
