@@ -1,8 +1,10 @@
 type Size = "xs" | "sm" | "md" | "lg" | "xl" | "2xl";
 
-type User = {
+type Profile = {
   id: string;
   email: string;
-  name: string;
+  firstName: string;
+  lastName: string;
   avatar: string;
+  role:string;
 };

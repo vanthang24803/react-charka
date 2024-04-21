@@ -1,5 +1,3 @@
-import { Stack } from "@chakra-ui/react";
-
 import { Search } from "@/components/actions/search/search";
 import { AuthActions } from "@/components/actions/auth/auth-actions";
 import { Cart } from "@/components/actions/cart/cart";
@@ -11,15 +9,11 @@ export const MenuBar = () => {
   const { isLogin } = useAuth();
 
   return (
-    <Stack
-      spacing={["1.25rem", "1.5rem", "2rem"]}
-      cursor="pointer"
-      direction="row"
-    >
+    <div className="flex items-center justify-center space-x-4 md:space-x-6 lg:space-x-8 hover:cursor-pointer">
       <Location />
       <Search />
       {isLogin ? <ProfileActions /> : <AuthActions />}
       <Cart />
-    </Stack>
+    </div>
   );
 };
