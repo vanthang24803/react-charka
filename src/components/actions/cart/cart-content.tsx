@@ -45,6 +45,7 @@ export const CartContent = ({ isOpen, num, onClose, size }: Props) => {
             <Button
               isDisabled={num === 0}
               className="w-full"
+              rounded="none"
               colorScheme="green"
               h="3rem"
             >
