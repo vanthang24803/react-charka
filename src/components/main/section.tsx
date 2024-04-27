@@ -1,22 +1,12 @@
-import {
-  Center,
-  Flex,
-  Hide,
-  Show,
-  Box,
-  Text,
-  Button,
-  Image,
-} from "@chakra-ui/react";
+import { Center, Flex, Hide } from "@chakra-ui/react";
 import { categories } from "@/constant";
 import { Link } from "react-router-dom";
-import { Menu } from "lucide-react";
-import IconTree from "@/assets/images/tree.svg";
+import { MobileSection } from "../mobile/section-mobile";
 
 export const Section = () => {
   return (
     <>
-      <Hide below="md">
+      <Hide below="lg">
         <Center as="section" h="45px" className="border-b border-gray-300">
           <Flex
             align="center"
@@ -45,31 +35,7 @@ export const Section = () => {
           </Flex>
         </Center>
       </Hide>
-      <Show below="md">
-        <Flex
-          align="center"
-          justify="space-between"
-          className="border-b border-gray-300"
-          h="40px"
-        >
-          <Button
-            w="50%"
-            rounded="none"
-            gap={2}
-            bgColor="#f9f8f7"
-            borderRight={2}
-            borderColor="gray.200"
-          >
-            <Menu />
-            <Text>Shop</Text>
-          </Button>
-          <Box w="1px" h="100%" bg="gray.200" />
-          <Button w="50%" rounded="none" gap={2} bgColor="#f9f8f7">
-            <Image src={IconTree} alt="icon" boxSize="20px" />
-            <Text>Shop</Text>
-          </Button>
-        </Flex>
-      </Show>
+      <MobileSection />
     </>
   );
 };

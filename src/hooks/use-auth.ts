@@ -96,7 +96,7 @@ const useAuth = create(
         }
       },
       logout: () => {
-        set({ access: "", refresh: "", isLogin: false });
+        set({ access: "", refresh: "", isLogin: false, user: null });
         Cookies.remove("access");
         Cookies.remove("refresh");
       },

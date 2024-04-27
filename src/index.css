@@ -5,3 +5,7 @@
 .text-primary {
   @apply text-[#009a7b];
 }
+
+.bg-primary {
+  @apply bg-[#009a7b];
+}

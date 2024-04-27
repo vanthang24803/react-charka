@@ -1,6 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import HomePage from "@/pages/HomePage.tsx";
 import { RootLayout } from "@/layouts/RootLayout";
+import ProfilePage from "@/pages/ProfilePage";
+
+import ProtectedRoute from "@/router/protected-route";
 
 const router = createBrowserRouter([
   {
@@ -11,7 +14,14 @@ const router = createBrowserRouter([
         path: "/",
         element: <HomePage />,
       },
-      
+      {
+        path: "/profile",
+        element: (
+          <ProtectedRoute>
+            <ProfilePage />
+          </ProtectedRoute>
+        ),
+      },
     ],
   },
 ]);

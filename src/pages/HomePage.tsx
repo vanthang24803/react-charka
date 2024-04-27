@@ -21,24 +21,22 @@ function HomePage() {
       <Billboard
         primaryUrl="/"
         secondaryUrl="/"
-        title="Spring is Blooming!"
-        description="We’re swooning over our latest collections."
+        title="Plant Your Sanctuary"
+        description="Create your own green oasis."
         primary="Shop Online"
         secondary="Find A Store"
-        thumbnail="https://cdn.sanity.io/images/y346iw48/production/65781b293fc831046bb03c8f0d00b0115d267525-1216x903.png?w=1536&h=1141&auto=format"
+        thumbnail="https://cdn.sanity.io/images/y346iw48/production/52d9100922d8e0283cb4b7e349bbe01f8b0f9878-1216x903.png?w=1536&h=1141&auto=format"
       />
       <Container maxW="container.2xl" py={[8, 12]} px={[4, 6]}>
         <Stack direction="column" gap={[6, 8]}>
           <Categories />
           <ListCard
             title="Trending Spring Houseplants"
-            col={4}
             products={data}
             loading={isLoading}
           />
           <ListCard
             title="Large Plants & Palms"
-            col={3}
             products={data}
             loading={isLoading}
           />

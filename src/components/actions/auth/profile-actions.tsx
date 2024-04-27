@@ -22,7 +22,7 @@ import { ArrowRight } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 
 export const ProfileActions = () => {
-  const { logout , user } = useAuth();
+  const { logout, user } = useAuth();
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const navigate = useNavigate();
@@ -105,7 +105,10 @@ export const ProfileActions = () => {
               colorScheme="green"
               rounded="none"
               h={50}
-              onClick={() => navigate("/profile")}
+              onClick={() => {
+                navigate("/profile");
+                onClose();
+              }}
             >
               Go To Account
             </Button>

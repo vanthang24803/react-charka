@@ -11,14 +11,18 @@ export const RootLayout = () => {
 
   useEffect(() => {
     if (isLogin) {
-      setInterval(() => {
+      const interval = setInterval(() => {
         refreshToken();
       }, 2000);
 
       profile();
       checkExpiry();
+
+      return () => {
+        clearInterval(interval);
+      };
     }
-  }, []);
+  }, [isLogin]);
 
   return (
     <main>

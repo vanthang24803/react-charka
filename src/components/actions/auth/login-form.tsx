@@ -10,14 +10,13 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import useAuth from "@/hooks/use-auth";
+import { useNavigate } from "react-router-dom";
 
-type Props = {
-  onClose: () => void;
-};
 
-export const LoginForm = ({ onClose }: Props) => {
+export const LoginForm = () => {
   const auth = useAuth();
   const [loading, setLoading] = useState(false);
+  const router = useNavigate();
 
   const loginSchema = yup.object().shape({
     email: yup
@@ -43,7 +42,7 @@ export const LoginForm = ({ onClose }: Props) => {
         const { email, password } = values;
         auth.login(email, password);
         setLoading(false);
-        onClose();
+        router("/", { replace: true });
       }}
     >
       {({ handleSubmit, errors, touched }) => (
