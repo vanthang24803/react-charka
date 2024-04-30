@@ -36,16 +36,16 @@ const useAuth = create(
           if (response.status === 200) {
             set({
               isLogin: true,
-              access: response.data.accessToken,
-              refresh: response.data.refreshToken,
+              access: response.data.message.accessToken,
+              refresh: response.data.message.refreshToken,
             });
 
             toast.success("Success");
 
-            Cookies.set("access", response.data.accessToken, {
+            Cookies.set("access", response.data.message.accessToken, {
               expires: 4 * 60,
             });
-            Cookies.set("refresh", response.data.refreshToken);
+            Cookies.set("refresh", response.data.message.refreshToken);
           }
         } catch (error: any) {
           console.error("Login failed:", error);
@@ -58,7 +58,7 @@ const useAuth = create(
 
           if (response.status === 200) {
             set({
-              user: response.data as Profile,
+              user: response.data.message as Profile,
             });
           }
         } catch (error: any) {
@@ -86,7 +86,7 @@ const useAuth = create(
             set({
               access: response.data.accessToken,
             });
-            Cookies.set("access", response.data.accessToken, {
+            Cookies.set("access", response.data.message.accessToken, {
               expires: 4 * 60,
             });
           }

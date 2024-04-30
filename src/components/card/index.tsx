@@ -1,3 +1,4 @@
+import { slugGenerate } from "@/utils/slug";
 import { Box, Button, Flex, Image, Stack, Text } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 
@@ -12,7 +13,9 @@ export const Card = ({ product }: Props) => {
       direction="column"
       gap={[4, 5]}
       cursor="pointer"
-      onClick={() => router(`/product/${product.id}`)}
+      onClick={() =>
+        router(`/product/${slugGenerate(product.name, product.id)}`)
+      }
     >
       <Box className="relative group">
         <Image

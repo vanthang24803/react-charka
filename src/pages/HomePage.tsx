@@ -2,7 +2,6 @@ import { fetchProducts } from "@/api/product";
 import { Billboard } from "@/components/billboard";
 import { Categories } from "@/components/main/categories";
 import { ListCard } from "@/components/main/list-card";
-import { Seo } from "@/components/seo";
 import { Container, Stack } from "@chakra-ui/react";
 import { useQuery } from "@tanstack/react-query";
 
@@ -12,12 +11,10 @@ function HomePage() {
     queryFn: () => fetchProducts(),
   });
 
+
   return (
     <>
-      <Seo
-        title="The Sill | Buy Plants Online"
-        description="Easy-care indoor plants, pots & planters, plant care accessories, and more delivered to your door. Free Shipping. 30-Day Guarantee."
-      />
+     
       <Billboard
         primaryUrl="/"
         secondaryUrl="/"

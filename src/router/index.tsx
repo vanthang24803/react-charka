@@ -4,6 +4,7 @@ import { RootLayout } from "@/layouts/RootLayout";
 import ProfilePage from "@/pages/ProfilePage";
 
 import ProtectedRoute from "@/router/protected-route";
+import DetailProduct from "@/pages/DetailPage";
 
 const router = createBrowserRouter([
   {
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <HomePage />,
+      },
+      {
+        path: "/product/:slug",
+        element: <DetailProduct />,
       },
       {
         path: "/profile",

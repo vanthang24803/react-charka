@@ -1,7 +1,7 @@
-import _http from "@/utils/http";
+  import _http from "@/utils/http";
 
-export const searchProducts = async (search: string) => {
-  const response = await _http.get(`/api/v1/products?name=${search}`);
+  export const searchProducts = async (search: string) => {
+    const response = await _http.get(`/api/v1/products?name=${search}`);
 
-  return response.data.message;
-};
+    return response.data.message;
+  };

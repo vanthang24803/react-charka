@@ -5,6 +5,7 @@ import { Navbar } from "@/components/main/navbar";
 import { Provider } from "@/components/providers";
 
 import useAuth from "@/hooks/use-auth";
+import { Seo } from "@/components/seo";
 
 export const RootLayout = () => {
   const { refreshToken, isLogin, profile, checkExpiry } = useAuth();
@@ -13,7 +14,7 @@ export const RootLayout = () => {
     if (isLogin) {
       const interval = setInterval(() => {
         refreshToken();
-      }, 2000);
+      }, 10000);
 
       profile();
       checkExpiry();
@@ -26,6 +27,10 @@ export const RootLayout = () => {
 
   return (
     <main>
+       <Seo
+        title="The Sill | Buy Plants Online"
+        description="Easy-care indoor plants, pots & planters, plant care accessories, and more delivered to your door. Free Shipping. 30-Day Guarantee."
+      />
       <Provider />
       <Navbar />
       <Outlet />
