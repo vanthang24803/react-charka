@@ -9,14 +9,7 @@ type Props = {
 export const Card = ({ product }: Props) => {
   const router = useNavigate();
   return (
-    <Stack
-      direction="column"
-      gap={[4, 5]}
-      cursor="pointer"
-      onClick={() =>
-        router(`/product/${slugGenerate(product.name, product.id)}`)
-      }
-    >
+    <Stack direction="column" gap={[4, 5]} cursor="pointer">
       <Box className="relative group">
         <Image
           src={product.thumbnail}
@@ -40,7 +33,13 @@ export const Card = ({ product }: Props) => {
           </Button>
         </Box>
       </Box>
-      <Stack direction="column" gap={1}>
+      <Stack
+        direction="column"
+        gap={1}
+        onClick={() =>
+          router(`/product/${slugGenerate(product.name, product.id)}`)
+        }
+      >
         <p className="text-base md:text-xl line-clamp-2">{product.name}</p>
         <i className="text-neutral-400 text-sm md:text-base">
           Choose your planter style

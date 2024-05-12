@@ -1,6 +1,7 @@
 import { fetchProducts } from "@/api/product";
 import { Billboard } from "@/components/billboard";
 import { Categories } from "@/components/main/categories";
+import { Introduce } from "@/components/main/introduce";
 import { ListCard } from "@/components/main/list-card";
 import { Container, Stack } from "@chakra-ui/react";
 import { useQuery } from "@tanstack/react-query";
@@ -11,10 +12,8 @@ function HomePage() {
     queryFn: () => fetchProducts(),
   });
 
-
   return (
     <>
-     
       <Billboard
         primaryUrl="/"
         secondaryUrl="/"
@@ -37,6 +36,7 @@ function HomePage() {
             products={data}
             loading={isLoading}
           />
+          <Introduce />
         </Stack>
       </Container>
     </>
