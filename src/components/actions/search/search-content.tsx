@@ -46,7 +46,7 @@ export const SearchContent = ({ isOpen, onClose }: Props) => {
   };
 
   const { data: products } = useQuery({
-    queryKey: ["search"],
+    queryKey: ["search", content],
     queryFn: () => searchProducts(content),
     staleTime: 0,
   });

@@ -25,7 +25,7 @@ export const ShopMobile = () => {
         onClick={onOpen}
       >
         <MenuIcon />
-        <Text>Shop</Text>
+        <Text fontSize={14}>Shop</Text>
       </Button>
 
       <Drawer
